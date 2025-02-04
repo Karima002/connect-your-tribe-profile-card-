@@ -1,14 +1,40 @@
 {% render 'partials/head.liquid' %}
 
 <article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+      <h3><b>{{ person.name }}: Frontend developer under development</b></h3>
 
-  <p>{{ person.name }}</p>
+      <header>
+                
+        <button>
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <title>Wijzig layout</title>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
+            <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
+            <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
+            <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M15 19v-2a2 2 0 0 1 2 -2h2"></path>
+            <path d="M15 5v2a2 2 0 0 0 2 2h2"></path>
+            <path d="M5 15h2a2 2 0 0 1 2 2v2"></path>
+            <path d="M5 9h2a2 2 0 0 0 2 -2v-2"></path>
+          </svg>
+        </button>
+        
+        <svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg>
 
-  <footer></footer>
-</article>
+        
+        <p>Creative, organised, Amsterdam, books, law, 21 y/o</p>
+      </header>
+  
+      <img src="assets/myname.JPG" alt="mijn naam" width="450" height="800">
+  
+      
+    </article>
+
+    <script src="scripts/jave1.js"></script>
+    
 
 {% render 'partials/foot.liquid' %}
