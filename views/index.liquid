@@ -1,7 +1,26 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-      <h3><b>{{ person.name }}: Frontend developer under development</b></h3>
+<section>
+
+  <article class="card-front">
+      <p>{{ person.custom.function }}</p>
+      <h1>{{ person.name }}</h1>
+  </article>
+
+  <article class="card-back"> 
+
+      <p>{{ person.custom.properties }}</p>
+      <h1>{{ person.name }}</h1>
+  </article>
+
+</section>
+
+
+
+
+
+{% comment %} <article>
+      <h1>{{ person.name }}</h1>
 
       <header>
                 
@@ -35,6 +54,6 @@
     </article>
 
     <script src="scripts/jave1.js"></script>
-    
+     {% endcomment %}
 
 {% render 'partials/foot.liquid' %}
