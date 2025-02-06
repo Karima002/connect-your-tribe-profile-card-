@@ -11,8 +11,6 @@
   box-sizing: border-box;
 }
 
-
-
 html {
   height: 100vh;
 }
@@ -22,40 +20,49 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     font-family: open sans;
 }
 
-section {
-    perspective: 15em;
+button {
+  all: unset;
+  position: relative;
+  left: 43%;
+  top: 3%;
 }
 
+.cards {
+    width: 30em;
+    height: 18em;
+    perspective: 500px;
+    transform-style: preserve-3d; 
+    transition: transform 900ms;
+  }
 
-.card-front .card-back {
-    transition-duration:1s;
-    grid-area: 1/1;
-    backface-visibility:hidden;
+.cards:hover {
+    cursor: pointer;
+    transform: rotateY(180deg);
 }
 
 .card-front {
-    rotate:Y 0deg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: #d7d5cd;
+  transition: transform 3s;
+    @media (min-width: 32em) {
+        width: 25em;
+        height: 18.75em;
+        min-width: 30em;
+    }
 }
 
 .card-back {
-  rotate:Y 180deg;
-} 
-.card-front {
-    position: relative;
+    background-color: #F0EAD2;
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 22em;
-    height: 18.75em;
-    min-width: 22em;
-    border-radius: 1rem;
-    background: #d7d5cd;
-    transition: 0.5s;
+    align-items: center; 
     @media (min-width: 32em) {
       width: 25em;
       height: 18.75em;
@@ -63,27 +70,50 @@ section {
     }
 }
 
+.card-back::before {
+    margin-bottom: 10px;
+    top: 250px;
+    left: 0;
+    right: 0;
+    padding-left: 1rem;
+}
+
+.card-back, .card-front {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
 
 p {
-    position: absolute;
-    top: 63%;
-    left: 4%;
     font-weight: 500;
     text-align: left;
     font-family: sans-serif;
     font-size: .95rem;
 }
 
-h1 {
+.card-front h1 {
     position: relative;
     font-family: "Times", serif;
     font-size: 2.3rem;
     text-transform: uppercase;
-    top: 6%;
     @media (min-width: 32em) {
       font-size: 3.2rem;
       top: 13%;
     }
+}
+
+.card-back h1 {
+  position: relative;
+  font-family: "Times", serif;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  @media (min-width: 32em) {
+    font-size: 3.2rem;
+    top: 2%;
+  }
 }
 
 

@@ -1,6 +1,17 @@
-const expandButton = document.querySelector('header button')
-expandButton.addEventListener('click', expand)
+// let cardFront = document.querySelector('.card-front')
+// let cardBack = document.querySelector('.card-back')
 
-function expand () {
-  document.body.classList.toggle('expand')
-}
+
+// cardFront.addEventListener('click', flipCard)
+
+// function flipCard() {
+//   cardBack.classList.add('showBack')
+// }
+
+
+// const expandButton = document.querySelector('header button')
+// expandButton.addEventListener('click', expand)
+
+// function expand () {
+//   document.body.classList.toggle('expand')
+// }
