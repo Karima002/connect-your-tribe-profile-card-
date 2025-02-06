@@ -1,17 +1,25 @@
 {% render 'partials/head.liquid' %}
 
-<section>
+<section class="cards">
 
-  <article class="card-front">
+  <div class="card-front">
       <p>{{ person.custom.function }}</p>
       <h1>{{ person.name }}</h1>
-  </article>
+  </div>
 
-  <article class="card-back"> 
+  <div class="card-back"> 
+      <button>
+            <img src="../assets/linkedin.svg" alt="icoon van linkedin">
+            <a href="www.linkedin.com/in/karima-m-ab63a11b3"></a>
+      </button>
 
       <p>{{ person.custom.properties }}</p>
+      <p>{{ person.custom.email }}</p>
+      <p>{{ person.custom.hometown }}</p>
       <h1>{{ person.name }}</h1>
-  </article>
+
+      
+  </div>
 
 </section>
 
@@ -55,5 +63,8 @@
 
     <script src="scripts/jave1.js"></script>
      {% endcomment %}
+
+     
+<script src="scripts/jave1.js"></script>
 
 {% render 'partials/foot.liquid' %}
