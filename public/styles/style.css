@@ -1,58 +1,95 @@
+@font-face {
+  font-family: "Times";
+  src: 
+  url("fonts/public/fonts/Times New Roman MT Condensed Regular.otf") format("OpenType");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
 }
-/*Bepaalt of de rand en binnenruimte van een element bij de afmetingen worden opgeteld zodat het element niet groter wordt dan je instelt*/
+
+
 
 html {
   height: 100vh;
 }
 
-/*vh staat voor viewport height. 1vh staat gelijk aan 1% van the viewport height. */
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: open sans;
-  color: #1c1d20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: open sans;
 }
 
-/*De body (card) wordt flexibel door de display op flexibel te zetten*/
-/*De CSS justify-content bepaalt hoe de browser ruimte verdeelt tussen en rondom elementen binnen een flex-container zodat de inhoud netjs uitgelijnd wordt binnen een*/
-
-h3, p {
-  padding-left: 3rem;
-  padding-right: 15rem;
-}
-/*Hiermee heb ik de de plaatsing van mijn header en paragraaf bepaald*/
-
-article {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  width: 400px;
-  height: 300px;
-  max-width: 30em;
-  min-width: 30em;
-  border-radius: 1rem;
-  background: #d7d5cd;
-  transition: 0.5s;
+section {
+    perspective: 15em;
 }
 
-@media only screen and (max-width: 430px) {
-  main{
-    width: 300px
-  }
+
+.card-front .card-back {
+    transition-duration:1s;
+    grid-area: 1/1;
+    backface-visibility:hidden;
 }
 
-/*Met de background propertie heb ik een value (kleurcode) gegeven aan de achtergrond van mijn visitekaartje*/
-/*Position: relative beteken dat een element normaal op de pagina wordt geplaatst, maar dta je het daarna kunt verplaatsen ten opzichte van zijn normale postitie. Je kun het verschuiven met de eigenschappen: top, bottom, left en right.*/
-/*display: flex: dit zorgt ervoor dat een container een flexbox wordt. Dit betekent dat de items binnen die container automatisch flexibel zijn */
-/*Met border-radius maak ik mijn randen rond*/
+.card-front {
+    rotate:Y 0deg;
+}
 
+.card-back {
+  rotate:Y 180deg;
+} 
+.card-front {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 22em;
+    height: 18.75em;
+    min-width: 22em;
+    border-radius: 1rem;
+    background: #d7d5cd;
+    transition: 0.5s;
+    @media (min-width: 32em) {
+      width: 25em;
+      height: 18.75em;
+      min-width: 30em;
+    }
+}
+
+
+p {
+    position: absolute;
+    top: 63%;
+    left: 4%;
+    font-weight: 500;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: .95rem;
+}
+
+h1 {
+    position: relative;
+    font-family: "Times", serif;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    top: 6%;
+    @media (min-width: 32em) {
+      font-size: 3.2rem;
+      top: 13%;
+    }
+}
+
+
+
+
+/* 
 button {
   position: absolute;
   right: 1rem;
@@ -68,9 +105,9 @@ button {
   cursor: pointer;
 }
 
-/*Right, top, width, height, padding bepaalt de vorm en positie van de button.*/
-/*De transition bepaalt de tijd waarin de button verschijnt */
-/*Met de cursor: pointer verandert de pointer is een hand als je over de button veegt*/
+/*Right, top, width, height, padding bepaalt de vorm en positie van de button.
+/*De transition bepaalt de tijd waarin de button verschijnt 
+Met de cursor: pointer verandert de pointer is een hand als je over de button veegt
 
 button:focus {
   outline: none;
@@ -80,7 +117,7 @@ button:focus svg {
   stroke: rgb(251, 251, 255);
 }
 
-/*Met de focus selector veranderen de boogjes in de inzoombutton wanneer die wordt aangeklikt*/
+Met de focus selector veranderen de boogjes in de inzoombutton wanneer die wordt aangeklikt
 
 svg {
   position: absolute;
@@ -101,7 +138,7 @@ img {
   transition: .5s;
 }
 
-/* expand content: oftwel wat er gebeurd als de afbeelding wordt vergroot */
+expand content: oftwel wat er gebeurd als de afbeelding wordt vergroot 
 body.expand {
   font-size: 1.15em;
 }
@@ -123,4 +160,4 @@ body.expand button svg:nth-of-type(2) {
 
 body.expand img {
   width: 29em;
-}
+} */
