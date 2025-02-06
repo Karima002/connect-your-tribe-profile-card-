@@ -40,7 +40,12 @@ app.set('views', './views')
 // In je visitekaartje was dit waarschijnlijk index.html
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', {person: personResponseJSON.data}) //Aan die view wordt een object meegegeven. Met de data uit de API, zodat die gegevens ook in die view gebruikt kunnen worden. 
+})
+
+//Nieuwe route aanmaken voor oefenen.liquid
+app.get('/oefenen', async function (request, response) {
+    response.render('oefenen.liquid', {person: personResponseJSON.data}) 
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
