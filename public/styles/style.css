@@ -23,7 +23,7 @@ body {
     font-family: open sans;
 }
 
-img {
+a, img {
   position: relative;
   left: 43%;
   top: 3%;
