@@ -15,7 +15,7 @@ const personResponse = await fetch('https://fdnd.directus.app/items/person/' + p
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const personResponseJSON = await personResponse.json()
 
-personResponseJSON.data.custom = JSON.parse(personResponseJSON.data.custom); // ervoor te zorgen dat de gegevens in personResponseJSON.data.custom in een JSON-object worden omgezet
+personResponseJSON.data.custom = JSON.parse(personResponseJSON.data.custom); // ervoor te zorgen dat de gegevens in personResponseJSON.data.custom (string) in een JSON-object worden omgezet
 
 
 // Controleer eventueel de data in je console
